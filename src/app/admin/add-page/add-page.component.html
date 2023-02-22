@@ -1,1 +1,43 @@
-<p>add-page works!</p>
+
+<form [formGroup]="form" novalidate (ngSubmit)="submit()">
+
+  <h2>Login as administrator</h2>
+
+  <div class="form-control">
+    <label for="type">Type</label>
+    <input id="type" class="form-control" type="type" formControlName="type" />
+    <div *ngIf="form.controls['type'].invalid && form.controls['type'].touched">
+      Chose product type
+    </div>
+  </div>
+  <div class="form-control">
+    <label for="title">Name</label>
+    <input id="title" class="form-control" type="title" formControlName="title" />
+    <div *ngIf="form.controls['title'].invalid && form.controls['title'].touched">
+      Enter product name
+    </div>
+  </div>
+  <div class="form-control">
+    <label for="type">Photo:</label>
+
+  </div>
+
+  <div class="form-control">
+    <label for="type">Information:</label>
+
+  </div>
+  <div class="form-control">
+    <label for="price">Price</label>
+    <input id="price" class="form-control" type="price" formControlName="price" />
+    <div *ngIf="form.controls['price'].invalid && form.controls['price'].touched">
+      Enter product price
+    </div>
+  </div>
+
+
+
+  <button class="btn btn-primary btn-block" >
+    Logon
+  </button>
+
+</form>
