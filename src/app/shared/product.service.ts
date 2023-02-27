@@ -18,7 +18,7 @@ export class ProductService {
   create(product:any){
 
     return this.http.post(`${environment.fbDbUrl}/products.json`, product)
-    .pipe( map( (res: FbResponse)  => {
+    .pipe( map(function (res: any) {
       return {
         ...product,
         id: res.name,
@@ -26,6 +26,19 @@ export class ProductService {
 
       }
     }))
+  }
+
+  getAll(){
+    return this.http.get(`${environment.fbDbUrl}/products.json`)
+      .pipe(map((res:any) => {
+        return Object.keys(res)
+          .map(key => ({
+            ...res[key],
+            id: key,
+            date: new Date(res[key].date)
+
+          }))
+      }))
   }
 
 }
