@@ -9,22 +9,24 @@ import {Router} from "@angular/router";
   styleUrls: ['./add-page.component.scss']
 })
 export class AddPageComponent implements OnInit{
+   form!: FormGroup
   submitted = false
-  form : FormGroup = new FormGroup({
-    type:new FormControl(null, Validators.required),
-    title:new FormControl(null, Validators.required),
-    photo:new FormControl(null, Validators.required),
-    info:new FormControl(null, Validators.required),
-    price:new FormControl(null, Validators.required),
-  });
+
   constructor(
     private productServ: ProductService,
     private router: Router
   ) {
   }
-  ngOnInit() {
-    this.form.invalid
 
+
+  ngOnInit() {
+    this.form = new FormGroup({
+      type: new FormControl(null, Validators.required),
+      title: new FormControl(null, Validators.required),
+      photo: new FormControl(null, Validators.required),
+      info: new FormControl(null, Validators.required),
+      price: new FormControl(null, Validators.required),
+    })
   }
 
 
@@ -33,8 +35,7 @@ export class AddPageComponent implements OnInit{
       return
     }
     this.submitted = true
-    let product: { date: Date; price: any; photo: any; type: any; title: any; info: any };
-    product = {
+    const product = {
       type: this.form.value.type,
       title: this.form.value.title,
       photo: this.form.value.photo,
@@ -43,10 +44,10 @@ export class AddPageComponent implements OnInit{
       date: new Date()
     };
     console.log(this.form)
-    this.productServ.create(product).subscribe(res => {
+    this.productServ.create(product).subscribe( res => {
       this.form.reset()
       this.submitted = false
-      this.router.navigate(['/']).then(res => res)
+      this.router.navigate(['/'])
     })
-  };
+  }
 }

@@ -1,5 +1,5 @@
-<div *ngIf="products$ | async  as  products">
-  <div *ngFor="let product of products "  >
+<div *ngIf="products$ | async  as  products" class="dashboar" >
+  <app-product *ngFor="let product of products" [product]="product"  class="box">
 
-  </div>
+  </app-product>
 </div>

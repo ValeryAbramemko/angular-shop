@@ -9,7 +9,7 @@
       <option value="Phone">Phone</option>
       <option value="Tablet">Tablet</option>
       <option value="Laptop">Laptop</option>
-      <option value="Носки">Носки</option>
+
     </select>
     <div *ngIf="form.controls['type'].invalid && form.controls['type'].touched">
       Chose product type
@@ -23,7 +23,7 @@
     </div>
   </div>
   <div class="form-control">
-    <label for="type">Photo:</label>
+    <label  for="type">Photo:</label>
     <quill-editor formControlName="photo"></quill-editor>
   </div>
 

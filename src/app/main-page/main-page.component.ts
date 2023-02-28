@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ProductService} from "../shared/product.service";
-import {Observable} from "rxjs";
+import {Observable, Observer} from "rxjs";
+
 
 @Component({
   selector: 'app-main-page',
@@ -8,13 +9,13 @@ import {Observable} from "rxjs";
   styleUrls: ['./main-page.component.scss']
 })
 export class MainPageComponent implements  OnInit{
-  products$: any
+   products$: Observable<Array<any>> = this.productServ.getAll();
   constructor(
     private productServ: ProductService,
   ) {}
 
   ngOnInit() {
-    this.products$ = this.productServ.getAll()
+    // this.products$ = this.productServ.getAll()
   }
 
 }
