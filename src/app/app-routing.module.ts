@@ -5,7 +5,7 @@ import {MainPageComponent} from "./main-page/main-page.component";
 import {ProductPageComponent} from "./product-page/product-page.component";
 import {CartPageComponent} from "./cart-page/cart-page.component";
 
-// @ts-ignore
+
 const routes: Routes = [
   {
     path: '', component: MainLayoutComponent,children:[
@@ -22,7 +22,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  imports: [RouterModule.forRoot(routes)]
 })
 export class AppRoutingModule { }

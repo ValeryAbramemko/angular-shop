@@ -12,6 +12,7 @@ export class DashboardPageComponent  implements OnInit{
   products: any[] = []
   pSub: Subscription | null = null;
   rSub: Subscription | null = null;
+  productName:any
   constructor(
     private productServ:ProductService
   ) {

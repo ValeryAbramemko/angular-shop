@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ProductService} from "../shared/product.service";
-import {Observable, Observer} from "rxjs";
+import {Observable} from "rxjs";
 
 
 @Component({
@@ -11,7 +11,7 @@ import {Observable, Observer} from "rxjs";
 export class MainPageComponent implements  OnInit{
    products$: Observable<Array<any>> = this.productServ.getAll();
   constructor(
-    private productServ: ProductService,
+    public productServ: ProductService,
   ) {}
 
   ngOnInit() {

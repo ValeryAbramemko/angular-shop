@@ -12,6 +12,7 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class ProductService {
+  type = 'Woman'
 
   constructor(private http : HttpClient) {}
 
@@ -56,6 +57,9 @@ export class ProductService {
 
   update(product:Product) {
     return this.http.patch(`${environment.fbDbUrl}/products/${product.id}.json`, product)
+  }
+  setType(type:any){
+    this.type = type
   }
 
 }

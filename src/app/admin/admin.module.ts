@@ -11,6 +11,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { AuthGuard } from '../shared/auth.guard';
 import { QuillModule } from 'ngx-quill'
 
+import {SearchPipe} from "../shared/search.pipe";
+
+
+
+let router;
+
 @NgModule({
   declarations: [
     AdminLayoutComponent,
@@ -19,12 +25,15 @@ import { QuillModule } from 'ngx-quill'
     AddPageComponent,
     EditPageComponent,
     OrdersPageComponent,
+    SearchPipe
 
   ],
-  imports:[
+  exports: [ RouterModule],
+  imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+
     QuillModule.forRoot(),
     RouterModule.forChild([
       {
@@ -37,9 +46,9 @@ import { QuillModule } from 'ngx-quill'
           {path: 'product/:id/edit', component: EditPageComponent, canActivate: [AuthGuard]},
         ]
       }
-    ])
-  ],
-  exports: [RouterModule, DashboardPageComponent]
+    ]),
+
+  ]
 })
 
 export class AdminModule{
