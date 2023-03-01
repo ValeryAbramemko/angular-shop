@@ -12,6 +12,7 @@ import { QuillModule } from 'ngx-quill';
 import { AuthInterceptor } from './shared/auth.interseptor';
 import { ProductComponent } from './product/product.component';
 import { SortingPipe } from './shared/sorting.pipe';
+import {AdminModule} from "./admin/admin.module";
 
 
 
@@ -32,15 +33,16 @@ import { SortingPipe } from './shared/sorting.pipe';
 
 
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
 
-    HttpClientModule,
-    QuillModule.forRoot(),
+        HttpClientModule,
+        QuillModule.forRoot(),
+        AdminModule,
 
 
-  ],
+    ],
 
   providers: [
     {

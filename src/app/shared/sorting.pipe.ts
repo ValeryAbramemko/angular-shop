@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+ import { Pipe, PipeTransform } from '@angular/core';
 import {Product} from "./interfaces";
 
 @Pipe({
@@ -6,11 +6,9 @@ import {Product} from "./interfaces";
 })
 export class SortingPipe implements PipeTransform {
 
-  transform(products: Product[], type=''): any {
-
-
+  transform(products: Product[], type =''): any {
     return products.filter( product => {
-      return product.type == type
+      return product.type == type;
     })
   }
 }

@@ -1,17 +1,17 @@
 <nav class="navbar bg-dark">
   <h2>Online  Shop</h2>
   <ul>
-    <li routerLink="active">
-      <a (click)="setType('Woman')">Woman</a>
+    <li routerLinkActive="active">
+      <a (click)="setType({type : 'Woman'})">Woman</a>
     </li>
-    <li routerLink="active">
-      <a (click)="setType('Man')">Man</a>
+    <li routerLinkActive="active">
+      <a (click)="setType({type : 'Man'})">Man</a>
     </li>
-    <li routerLink="active">
-      <a (click)="setType('Children')">Children</a>
+    <li routerLinkActive="active">
+      <a (click)="setType({type : 'Children'})">Children</a>
     </li>
-    <li routerLink="active">
-      <a (click)="setType('Cart') "[routerLink]="['/cart']">Cart</a>
+    <li routerLinkActive="active">
+      <a (click)="setType({type : 'Cart'}) " [routerLink]="['/cart']">Cart</a>
     </li>
   </ul>
 </nav>

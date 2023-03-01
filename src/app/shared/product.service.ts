@@ -13,6 +13,7 @@ import {Observable} from "rxjs";
 })
 export class ProductService {
   type = 'Woman'
+  cartProducts: Product[] = []
 
   constructor(private http : HttpClient) {}
 
@@ -58,8 +59,12 @@ export class ProductService {
   update(product:Product) {
     return this.http.patch(`${environment.fbDbUrl}/products/${product.id}.json`, product)
   }
-  setType(type:any){
+  setType(type:any ){
     this.type = type
+  }
+
+  addProduct(product:any){
+    this.cartProducts.push(product)
   }
 
 }

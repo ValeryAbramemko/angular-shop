@@ -28,7 +28,7 @@ let router;
     SearchPipe
 
   ],
-  exports: [ RouterModule],
+    exports: [RouterModule, SearchPipe],
   imports: [
     CommonModule,
     FormsModule,

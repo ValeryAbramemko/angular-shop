@@ -9,7 +9,7 @@ import {ProductService} from "../product.service";
 })
 export class MainLayoutComponent implements  OnInit{
 
-  type = 'Woman'
+  type = `Woman`
   constructor(
     private router: Router,
     private productServ: ProductService
@@ -18,11 +18,10 @@ export class MainLayoutComponent implements  OnInit{
 
   ngOnInit() {
   }
-  setType(type:any){
-
+  setType({type}: { type: any }){
     this.type = type;
 
-    if(this.type !=='Cart' ){
+    if(this.type !== 'Cart' ){
       this.router.navigate(['/'],{
         queryParams:{
           type : this.type
