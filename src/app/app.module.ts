@@ -13,6 +13,7 @@ import { AuthInterceptor } from './shared/auth.interseptor';
 import { ProductComponent } from './product/product.component';
 import { SortingPipe } from './shared/sorting.pipe';
 import {AdminModule} from "./admin/admin.module";
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 
@@ -40,6 +41,7 @@ import {AdminModule} from "./admin/admin.module";
         HttpClientModule,
         QuillModule.forRoot(),
         AdminModule,
+        ReactiveFormsModule,
 
 
     ],
